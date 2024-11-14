@@ -1,5 +1,5 @@
 import { pixabayApi } from './js/pixabay-api.js';
-import { renderGallery } from './js/render-functions.js';
+import { renderGallery, displayErrorMessage } from './js/render-functions.js';
 
 // Описаний у документації
 import iziToast from 'izitoast';
@@ -39,6 +39,9 @@ form.addEventListener('submit', event => {
     })
     .catch(error => {
       loader.style.display = 'none';
+      displayErrorMessage(
+        'An error occurred while fetching data. Please try again later.'
+      );
       console.error('Error fetching data: ', error);
     });
 });

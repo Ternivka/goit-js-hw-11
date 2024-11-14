@@ -14,32 +14,24 @@ export function renderGallery(images) {
     return;
   }
 
-  images.forEach(image => {
-    const imageCard = document.createElement('div');
-    imageCard.classList.add('photo-card');
-
-    imageCard.innerHTML = `
+  const galleryHTML = images
+    .map(
+      image =>
+        `<div class="photo-card">
       <a href="${image.largeImageURL}" class="gallery-item">
         <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
       </a>
       <div class="info">
-        <p class="info-item">
-          <b>Likes:</b> ${image.likes}
-        </p>
-        <p class="info-item">
-          <b>Views:</b> ${image.views}
-        </p>
-        <p class="info-item">
-          <b>Comments:</b> ${image.comments}
-        </p>
-        <p class="info-item">
-          <b>Downloads:</b> ${image.downloads}
-        </p>
+        <p class="info-item"><b>Likes:</b> ${image.likes}</p>
+        <p class="info-item"><b>Views:</b> ${image.views}</p>
+        <p class="info-item"><b>Comments:</b> ${image.comments}</p>
+        <p class="info-item"><b>Downloads:</b> ${image.downloads}</p>
       </div>
-    `;
+    </div>`
+    )
+    .join('');
 
-    gallery.appendChild(imageCard);
-  });
+  gallery.insertAdjacentHTML('beforeend', galleryHTML);
 }
 
 export function displayErrorMessage(message) {
