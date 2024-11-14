@@ -11,3 +11,54 @@
 @import url('./animations.css');
 
 /* Sections style */
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#search-form {
+  margin: 20px;
+}
+
+#search-input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.loader {
+  text-align: center;
+  font-size: 20px;
+  color: #000;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.photo-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.info-item {
+  margin-bottom: 5px;
+}
